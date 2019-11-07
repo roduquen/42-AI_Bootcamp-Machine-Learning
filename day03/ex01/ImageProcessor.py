@@ -1,20 +1,25 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    test.py                                            :+:      :+:    :+:    #
+#    ImageProcessor.py                                  :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: roduquen <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/11/05 17:43:46 by roduquen          #+#    #+#              #
-#    Updated: 2019/11/07 11:16:45 by roduquen         ###   ########.fr        #
+#    Created: 2019/11/07 11:18:53 by roduquen          #+#    #+#              #
+#    Updated: 2019/11/07 16:43:04 by roduquen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-import recipe
-import book
+import	matplotlib.pyplot
+import	numpy
 
-cookbook = book.Book()
-cookbook.add_recipe("hamburger")
-for elem in cookbook.recipes_list:
-	for node in cookbook.recipes_list[elem]:
-		print(node)
+class	ImageProcessor:
+	def	load(path):
+		img = matplotlib.pyplot.imread(path)
+		print("Loading image of dimensions", len(img), "x", len(img[0]))
+		return img
+
+	def	display(array):
+		matplotlib.pyplot.imshow(array)
+		matplotlib.pyplot.show()
+

@@ -6,7 +6,7 @@
 #    By: roduquen <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/05 10:28:29 by roduquen          #+#    #+#              #
-#    Updated: 2019/11/05 22:46:07 by roduquen         ###   ########.fr        #
+#    Updated: 2019/11/07 11:16:37 by roduquen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,16 +50,16 @@ class	Book:
 						if ans == "y":
 							return
 						self.recipes_list[elem].append(new_recipe)
-						self.last_update = datetime.date
+						self.last_update = datetime.datetime()
 						return
 				self.recipes_list[elem].append(new_recipe)
-				self.last_update = datetime.date
+				self.last_update = datetime.datetime()
 
 	# --------------------------------------------------------- #
 
-	def __init__(self, name = "cookbook"):
-		self.creation_date = datetime.date
-		self.last_update = datetime.date
+	def __init__(self, name = "cookbook", var=0):
+		self.creation_date = datetime.datetime()
+		self.last_update = datetime.datetime()
 		self.name = name
 		self.recipes_list = {"starter":[], "lunch":[], "dessert":[]}
 
